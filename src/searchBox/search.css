@@ -1,0 +1,12 @@
+.searchbar {
+  height: 30px;
+  width: 100vw;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 25px;
+}
