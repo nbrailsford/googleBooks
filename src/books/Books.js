@@ -1,26 +1,15 @@
 import React from "react";
 
-class Books extends React.Component {
-  constructor(props) {
-    super(props);
-    this.State = [];
-  }
-  componentDidMount() {
-    const url =
-      "GET https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyCg-q5HiBjXZEcLrebOwgsbj09dnR860dY";
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.setState(data));
-  }
-
-  render() {
+const Books = props => {
+  const titles = props.title.map(title => {
     return (
-      <div>
-        <p>asdfadsf</p>
+      <div key={title.id}>
+        <h3>{title.name}</h3>
+        <p>{title.brewery_type}</p>
       </div>
     );
-  }
-}
+  });
+  return <div>{titles}</div>;
+};
 
 export default Books;
